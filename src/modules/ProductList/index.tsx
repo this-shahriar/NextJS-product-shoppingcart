@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, Spacer } from "@chakra-ui/react";
+import { Box, Flex, Grid } from "@chakra-ui/react";
 import { useContext } from "react";
 import { SelectedContext } from "../../contexts/SelectedContext";
 import { ProductType, SelectedTypes } from "../../interfaces";
