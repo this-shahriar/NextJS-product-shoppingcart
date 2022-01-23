@@ -1,4 +1,4 @@
-## Live at : https://quick-cart.netlify.app
+## Live at : https://quick-ecom.netlify.app
 
 Minimal e-commerce app created using Typescript and NextJS.
 
