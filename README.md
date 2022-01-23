@@ -2,6 +2,6 @@
 
 Minimal e-commerce app created using Typescript and NextJS.
 
-- `npm install`
-- `npm run dev`
-- `npm run build && npm run start`
+- `yarn`
+- `yarn dev`
+- `yarn build && yarn start`

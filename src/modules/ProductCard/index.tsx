@@ -21,7 +21,7 @@ const ProductCard = ({ product }: ProductCardProps) => (
       />
     </Flex>
     <Flex p="1rem" direction="column">
-      <Text variant="samp" fontWeight="bold" isTruncated>
+      <Text fontWeight="bold" isTruncated>
         {product?.title}
       </Text>
       {product?.maxSelection ? (
