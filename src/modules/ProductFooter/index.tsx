@@ -1,7 +1,8 @@
-import { Box, Button, Flex, Text } from "@chakra-ui/react";
 import { useContext } from "react";
-import { SelectedContext } from "../../contexts/SelectedContext";
+import { AiOutlineMinusCircle } from "react-icons/ai";
 import { ProductType, SelectedTypes } from "../../interfaces";
+import { SelectedContext } from "../../contexts/SelectedContext";
+import { Button, ButtonGroup, Flex, IconButton } from "@chakra-ui/react";
 
 interface Props {
   product: ProductType;
@@ -9,13 +10,8 @@ interface Props {
 
 const ProductFooter = ({ product }: Props) => {
   const { id } = product;
-  const {
-    selected,
-    addItem,
-    removeItem,
-    isSelected,
-    demoData,
-  } = useContext<SelectedTypes>(SelectedContext);
+  const { selected, addItem, removeItem, isSelected, demoData } =
+    useContext<SelectedTypes>(SelectedContext);
 
   const isDisabled = (): boolean => {
     const selectedTemp = isSelected(id);
@@ -33,27 +29,28 @@ const ProductFooter = ({ product }: Props) => {
 
   return (
     <Flex align="center" justify="space-around">
-      <Button
-        isDisabled={!isSelected(id)}
-        onClick={() => removeItem(id)}
-        size="sm"
+      <ButtonGroup
+        w="100%"
+        isAttached
         variant="solid"
+        colorScheme="teal"
+        size="md"
       >
-        Remove
-      </Button>
-      <Box>
-        <Text as="u">
-          {isSelected(id) ? isSelected(id)?.selected : 0} selected
-        </Text>
-      </Box>
-      <Button
-        isDisabled={isDisabled()}
-        onClick={() => addItem(product)}
-        size="sm"
-        variant="solid"
-      >
-        Add
-      </Button>
+        <Button
+          isFullWidth
+          isDisabled={isDisabled()}
+          onClick={() => addItem(product)}
+          mr="-px"
+        >
+          Add to cart {isSelected(id) ? `(${isSelected(id)?.selected})` : ""}
+        </Button>
+        <IconButton
+          isDisabled={!isSelected(id)}
+          onClick={() => removeItem(id)}
+          aria-label="Remove from cart"
+          icon={<AiOutlineMinusCircle />}
+        />
+      </ButtonGroup>
     </Flex>
   );
 };
