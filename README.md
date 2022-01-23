@@ -1,1 +1,7 @@
-# Example NextJS app with [chakra-ui](https://github.com/chakra-ui/chakra-ui) and Typescript
+## Live at : https://quick-cart.netlify.app
+
+Minimal e-commerce app created using Typescript and NextJS.
+
+- `npm install`
+- `npm run dev`
+- `npm run build && npm run start`
